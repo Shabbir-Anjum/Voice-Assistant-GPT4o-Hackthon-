@@ -7,8 +7,8 @@ export default function Profile() {
 
 const navigate= useNavigate()
   return (
-    <div className="min-h-screen flex items-center justify-center  p-2">
-      <div className="container max-w-screen-lg flex flex-col items-center p-4 font-Roboto gap-8  rounded-lg shadow-md">
+    <div className="min-h-screen flex items-center justify-center font-OpenSans  p-2">
+      <div className="container max-w-screen-lg flex flex-col items-center p-4  gap-8  rounded-lg shadow-md">
         <h1 className="heading text-2xl font-bold">
           User Profile
         </h1>

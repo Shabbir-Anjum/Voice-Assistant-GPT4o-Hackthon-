@@ -1,24 +1,11 @@
-import { faRocketchat } from '@fortawesome/free-brands-svg-icons';
-import {faCircleChevronLeft, faCalendar, faComment, faDownload, faEye, faGear, faHeadphones, faMessage, faMicrophone, faSliders, faUser, faUserPlus, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { urls } from '../router'
 import React, { useEffect, useState } from 'react';
-
-
-  export default function VoiceAssistant() {
-
-
+export default function VoiceAssistant() {
     const [audioSocket, setAudioSocket] = useState(null);
     let mediaRecorder;
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const [showSection, setShowSection] = useState(null);
-    const navigate= useNavigate()
-
-    //handleSectionCSS
-    const handleSectionClick = (section) => {
-    setShowSection(showSection === section ? null : section);
-  }; 
-    const enqueueAudio = (arrayBuffer) => {
+      const enqueueAudio = (arrayBuffer) => {
       audioContext.decodeAudioData(arrayBuffer, (buffer) => {
         const source = audioContext.createBufferSource();
         source.buffer = buffer;
@@ -97,110 +84,20 @@ import React, { useEffect, useState } from 'react';
         recorder.start(1000 * 1)
       }
     };
-  
   return (
-    <div className="h-full container py-12 md:py-0 items-center flex flex-col justify-between overflow-hidden">
-      <div className='flex items-center justify-center'>
-
-        {/* Microphone add code*/}
-
-        <button className='p-2 bg-[#1a1a1b] rounded-full' onClick={handleMicrophoneClick}>
-          <FontAwesomeIcon className='p-16  text-3xl border-yellow-500 border-2 rounded-full' icon={faMicrophone} />
-        </button>
-
-
-      </div>
-      <div className="fixed bottom-0 left-0 w-full px-5">
-        <div className="border-t-2 flex justify-around border-2 border-black rounded-3xl p-2 m-2 px-4">
-          <button className="text-2xl" onClick={() => handleSectionClick('audio')}>
-            <FontAwesomeIcon icon={faVolumeHigh} />
-          </button>
-          <button className="text-2xl" onClick={() => handleSectionClick('chat')}>
-            <FontAwesomeIcon icon={faMessage} />
-          </button>
-          <button className="text-2xl" onClick={() => handleSectionClick('control')}>
-            <FontAwesomeIcon icon={faGear} />
-          </button>
+    <>
+      <div className=' flex flex-col gap-10 items-center justify-center mt-36 px-6 md:px-20'>
+        <div>
+        Meet our AI voice Assistant.
+        </div>
+        <div>
+          <Link to={urls.Voice} className=' bg-buttonBg p-4 px-8 font-OpenSans font-bold rounded-2xl'>Start Conversation</Link>
+        </div>
+        <div>
+        By starting a conversation, I accept Hume's Terms of Use and acknowledge the Privacy Policy
         </div>
       </div>
-
-      {showSection === 'audio' && (
-        <div className='border w-full animate-movingD container mdx:w-48 gap-2 absolute bottom-16 mdx:left-[19%] bg-bodyColor flex flex-col items-center justify-center rounded-xl p-4 mt-4'>
-          <div className='text-center text-textColor font-bold mx-auto p-2 border-b-4 inline-block'>
-            Audio Mode
-          </div>
-          <div>
-
-          
-          <div className="flex items-center gap-8 w-full justify-start">
-            <FontAwesomeIcon icon={faHeadphones} />
-            <span>Earpiece</span>
-          </div>
-          <div className="flex items-center gap-7 w-full  justify-start">
-            <FontAwesomeIcon  icon={faVolumeHigh} />
-            <span>Speaker</span>
-          </div>
-          <div className="flex items-center gap-8 w-full justify-start">
-            <FontAwesomeIcon icon={faSliders} />
-            <span>Volume</span>
-          </div>
-        </div>
-        </div>
-      )}
-
-      {showSection === 'chat' && (
-        <div className='border w-full animate-movingD container mdx:w-48 gap-2 absolute bottom-16 mdx:right-[38%] bg-bodyColor flex flex-col items-center justify-center rounded-xl p-4 mt-4'>
-          <div className='text-center text-textColor font-bold mx-auto p-2 border-b-4 inline-block'>
-            Chat
-          </div>
-          <div className='m'>
-          <div className="flex items-center gap-8 w-full justify-start">
-            <FontAwesomeIcon icon={faComment} />
-            <span>Team</span>
-          </div>
-          <div className="flex items-center gap-7 w-full justify-start">
-            <FontAwesomeIcon icon={faRocketchat} />
-            <span>ChatBot</span>
-          </div>
-        </div>
-        </div>
-      )}
-
-      {showSection === 'control' && (
-        <div className='border animate-movingD w-full container mdx:w-48 gap-2 absolute bottom-16 mdx:right-[7%] bg-bodyColor flex flex-col items-center justify-center rounded-xl p-4 mt-4'>
-          <div className='text-center text-textColor font-bold mx-auto p-2 border-b-4 inline-block'>
-            Control
-          </div>
-          <div>
-          <div className="flex items-center gap-8 w-full justify-start">
-            <FontAwesomeIcon icon={faUser} />
-            <span>Profile</span>
-          </div>
-          <div className="flex items-center gap-7 w-full justify-start">
-            <FontAwesomeIcon icon={faUserPlus} />
-            <span>Invite Staff</span>
-          </div>
-          <div className="flex items-center gap-7 w-full justify-start">
-            <FontAwesomeIcon icon={faEye} />
-            <span>Guide</span>
-          </div>
-          <div className="flex items-center gap-8 w-full justify-start">
-            <FontAwesomeIcon icon={faCalendar} />
-            <span>Event</span>
-          </div>
-          <div className="flex items-center gap-8 w-full justify-start">
-            <FontAwesomeIcon icon={faDownload} />
-            <span>Download</span>
-          </div>
-        </div>
-        </div>
-      )}
-        <button
-         onClick={()=> navigate('/')}
-          className="fixed bottom-4 right-12 z-20 flex items-center justify-center bg-[#1a1a1b] text-white p-3 rounded-full shadow hover:bg-transparent transition-colors"
-        >
-          <FontAwesomeIcon icon={faCircleChevronLeft} /> 
-        </button>
-  </div>
+     
+    </>
   )
 }

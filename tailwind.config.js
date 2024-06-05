@@ -18,6 +18,7 @@ module.exports = {
         bodyColor: "#221f20",
         borderColor: "#686666",
         textColor: "#f5f5f5",
+        buttonBg: '#1a1a1a'
         
       },
       keyframes: {

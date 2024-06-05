@@ -10,6 +10,7 @@ import Signup from "../Components/Signup.jsx";
 import FileUpload from "../Pages/UploadDocs.jsx";
 import VoiceAssistant from "../Pages/VoiceAssistant.jsx";
 import ChatAssistant from "../Pages/ChatAssistant.jsx";
+import Voice from "../Pages/Voice.jsx";
 export const urls = {
   login: "/login",
   signUp: "/signup",
@@ -17,7 +18,8 @@ export const urls = {
   profile: "/profile",
   FunctionSheet: "/FunctionSheet",
   VoiceAssistant: "/VoiceAssistant",
-  ChatAssistant: "/ChatAssistant"
+  ChatAssistant: "/ChatAssistant",
+  Voice: '/Voice'
 };
 
 urls.verifyEmailAddress = `${urls.signUp}/verify-email-address`;
@@ -79,6 +81,10 @@ const routes = [
           {
             path: urls.ChatAssistant,
             element: <ChatAssistant />,
+          },
+          {
+            path: urls.Voice,
+            element: <Voice/>,
           }
         ],
       },

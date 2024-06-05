@@ -17,9 +17,12 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@google/generative-ai": "^0.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.1"
+    "react-lottie": "^1.2.4",
+    "react-router-dom": "^6.23.1",
+    "react-use-typewriter": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

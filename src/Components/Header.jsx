@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <div className="md:h-32 h-24 w-full flex items-center justify-between gap-4 px-8">
+    <div className="md:h-32 h-24 w-full flex font-OpenSans items-center justify-between gap-4 px-8">
       <div>
         <img src="./Eva_white_tranparent_background.svg" alt="error" className="w-60" />
       </div>
@@ -56,7 +56,7 @@ export default function Header() {
             </button>
                 
               </div>
-              <div className='flex items-center justify-center  flex-col md:flex-row gap-6 md:gap-0 '>
+              <div className='flex items-center justify-center font-OpenSans  flex-col md:flex-row gap-6 md:gap-0 '>
 
               
               <Link to={urls.home} className="block md:inline-block text-sm font-semibold text-gray-500 hover:text-gray-700 py-2 md:py-0 px-2">

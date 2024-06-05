@@ -5,16 +5,17 @@
 @tailwind utilities;
 @layer base{
     body{
-        @apply bg-bodyColor
+        @apply bg-bodyColor font-OpenSans
     }
 }
 @layer utilities{
-    .border{
-        @apply border-white ;
+    .border1{
+        @apply border-[1px] border-borderColor rounded-md;
     }
     .heading{
-      @apply  font-Roboto text-center text-textColor font-bold text-4xl mx-auto p-4 border-b-4 py-4 inline-block;
+      @apply  font-OpenSans text-center text-textColor font-bold text-4xl mx-auto p-4 border-b-4 py-4 inline-block;
     }
+
 }
 @font-face {
     font-family: 'EvaFont';
