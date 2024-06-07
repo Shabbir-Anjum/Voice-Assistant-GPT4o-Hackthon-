@@ -63,13 +63,13 @@ export default function ChatAssistant() {
   };
 
   return (
-    <section className='container flex flex-col justify-between rounded-lg shadow-lg  box-border h-screen p-36'>
-      <div className='flex flex-col items-center justify-center gap-16 py-2'>
+    <section className='container flex flex-col justify-between rounded-lg shadow-lg h-screen  box-border md:p-36'>
+      <div className='flex flex-col items-center justify-center gap-2'>
         {!isTyping && (
-          <div className='p-5 border-[1px] border-borderColor rounded-md'>
-            <h1 className='text-2xl font-bold py-8'>Welcome to AI Chatbot!</h1>
-            <p>This is an open source AI chatbot app template built with React.js.</p>
-            <p>It uses React Server Components to combine text with generative UI as output of the LLM. The UI state is synced through the SDK so the model is aware of your interactions as they happen.</p>
+          <div className=' px-16 pb-10 pt-2 border-[1px] border-borderColor rounded-md'>
+            <h1 className='text-2xl font-bold py-6'>Hi, I'm your AI event assistant</h1>
+            <p>You can ask me any questions related to your event or the event industry.</p>
+            <p>I can process tasks for you, such as sending messages, taking notes, and adding tasks to your calendar.</p>
           </div>
         )}
         <div className='w-full' style={{ overflowY: 'auto' }}>
@@ -93,28 +93,28 @@ export default function ChatAssistant() {
             </div>
           </div>
         </div>
-        <button
+        {/* <button
           onClick={() => navigate('/')}
-          className="fixed bottom-5 right-8 z-20 flex items-center justify-center bg-[#1a1a1b] text-white p-3 rounded-full shadow hover:bg-transparent transition-colors"
+          className="fixed bottom-4 right-6 z-20 flex items-center justify-center bg-[#1a1a1b] text-white p-3 rounded-full shadow hover:bg-transparent transition-colors"
         >
           <FontAwesomeIcon icon={faCircleChevronLeft} />
-        </button>
+        </button> */}
       </div>
       <div>
         <div>
           {!isTyping && (
-            <div className='grid md:grid-cols-2 p-4 md:p-10 gap-4 md:gap-16'>
-              <div className='border1 p-4'>
-                This is an open source AI chatbot app template built with React.js.
+            <div className='grid md:grid-cols-2 p-2 md:p-10 gap-2 md:gap-16'>
+              <div className='border1 p-4' onc>
+              Provide me an Event briefing ?
               </div>
               <div className='border1 p-4'>
-                This is an open source AI chatbot app template built with React.js.
+              What is the number of the organizer ?
               </div>
               <div className='border1 p-4 hidden md:block'>
-                This is an open source AI chatbot app template built with React.js.
+              Give me a list of the staff ?
               </div>
               <div className='border1 p-4 hidden md:block'>
-                This is an open source AI chatbot app template built with React.js.
+              Who is the security manager on site ?
               </div>
             </div>
           )}

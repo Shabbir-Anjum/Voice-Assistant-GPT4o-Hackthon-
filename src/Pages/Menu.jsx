@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 export default function Menu() {
   return (
-    <div className='flex flex-col items-center justify-center  px-10 gap-8'>
+    <div className='flex flex-col items-center justify-center container  px-10 gap-8'>
         <div className='heading'>
           Home
         </div>

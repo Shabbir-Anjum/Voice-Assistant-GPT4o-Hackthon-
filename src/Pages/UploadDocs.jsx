@@ -54,33 +54,15 @@ const FileUpload = () => {
   };
 
   return (
-    <div className="container p-4 file-upload flex flex-col gap-6 justify-center items-center">
+    <div className="container p-4 file-upload  flex flex-col gap-6 justify-between items-center">
+
       <h1 className='heading'>Upload Documents</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col p-4 gap-10 items-center justify-center md:flex-row'>
-        <input type="file" accept="application/pdf" onChange={handleFileChange} className='bg-transparent border-2 border-borderColor rounded-xl p-4'/>
+
+
+      <form onSubmit={handleSubmit} className=' mt-48 m-5 flex flex-col p-2 gap-10 items-center justify-center md:flex-row'>
+        <input type="file" accept="application/pdf" onChange={handleFileChange} className='bg-transparent border-2 border-borderColor rounded-xl p-2 w-full'/>
         <button className='text-4xl font-bold text-center' type="submit"><FontAwesomeIcon icon={faFilePdf}/></button>
       </form>
-      {message && <p>{message}</p>}
-      <div className='w-full'>
-        Enter your Functional Query:
-        <div>
-          <CustomInput
-            type="text"
-            placeholder="Question"
-            value={question}
-            onChange={handleQuestionChange}
-          />
-        </div>
-        <div className='w-full'>
-          <textarea name="d" id="d" value={answer} rows={10} className='p-4 w-full font-Roboto bg-transparent border-borderColor border-2 rounded-xl'></textarea>
-        </div>
-      </div>
-      <button
-         onClick={()=> navigate('/')}
-          className="fixed bottom-5 right-8 z-20 flex items-center justify-center bg-[#1a1a1b] text-white p-3 rounded-full shadow hover:bg-transparent transition-colors"
-        >
-          <FontAwesomeIcon icon={faCircleChevronLeft} />
-        </button>
     </div>
   );
 };
